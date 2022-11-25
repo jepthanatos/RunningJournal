@@ -5,13 +5,6 @@
 // Description : Main program of a running journal.
 //==============================================================================
 
-// Includes.
-#include <unistd.h>
-#include <vector>
-#include <iostream>
-#include <chrono>
-#include <thread>
-
 // Local includes.
 #include "ProgramManager.h"
 
@@ -26,14 +19,6 @@ using namespace runjour;
 
 int main()
 {
-    std::cout << __cplusplus << std::endl;
-    if (__cplusplus > 201703L) std::cout << "C++20\n";
-    else if (__cplusplus == 201703L) std::cout << "C++17\n";
-    else if (__cplusplus == 201402L) std::cout << "C++14\n";
-    else if (__cplusplus == 201103L) std::cout << "C++11\n";
-    else if (__cplusplus == 199711L) std::cout << "C++98\n";
-    else std::cout << "pre-standard C++\n";
-
     // Run the services of the program.
     ProgramManager::getInstance().startUp();
 

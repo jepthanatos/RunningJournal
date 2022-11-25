@@ -7,6 +7,7 @@
 
 // System includes
 #include <iostream>
+#include <unistd.h>
 
 // Local includes
 #include "ProgramManager.h"
@@ -47,6 +48,23 @@ namespace runjour
         LogManager::getInstance().writeLog(E_LEVEL::DEBUG, "Starting services...");
         started = LogManager::getInstance().isStarted();
         finalize = false;
+
+        // Dump into the logs the C++ used.
+        std::string version{"C++ version: " + std::to_string(__cplusplus) + " "};
+        if (__cplusplus > 201703L)
+            version += "C++20";
+        else if (__cplusplus == 201703L)
+            version += "C++17";
+        else if (__cplusplus == 201402L)
+            version += "C++14";
+        else if (__cplusplus == 201103L)
+            version += "C++11";
+        else if (__cplusplus == 199711L)
+            version += "C++98";
+        else
+            version += "pre-standard C++";
+
+        LogManager::getInstance().writeLog(E_LEVEL::DEBUG, version);
     }
 
     /*--------------------------------------------------------------------------
@@ -205,8 +223,7 @@ namespace runjour
      */
     void ProgramManager::setStatus(bool value)
     {
-        LogManager::getInstance().writeLog
-            (E_LEVEL::DEBUG, "Setting finalize to = " + std::to_string(value));
+        LogManager::getInstance().writeLog(E_LEVEL::DEBUG, "Setting finalize to = " + std::to_string(value));
         finalize = value;
     }
 
