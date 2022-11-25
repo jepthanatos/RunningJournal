@@ -1,13 +1,16 @@
-//============================================================================
+//==============================================================================
 // Name        : Journal.cpp
 // Author      : Jorge
 // Copyright   : https://creativecommons.org/licenses/by/4.0/
 // Description : Class to define an Journal.
-//============================================================================
+//==============================================================================
 
 #include "Journal.h"
+
+// Local includes.
 #include "LogManager.h"
 
+// System includes.
 #include <string>
 #include <sstream>
 
@@ -33,7 +36,7 @@ namespace runjour
         // TODO
     }
 
-    /*------------------------------------------------------------------------------
+    /*--------------------------------------------------------------------------
      * Get the singleton instance of the Journal.
      */
     Journal &Journal::getInstance()

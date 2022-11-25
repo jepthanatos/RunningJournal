@@ -1,9 +1,9 @@
-//============================================================================
+//==============================================================================
 // Name        : RunningJournal.cpp
 // Author      : Jorge
 // Copyright   : https://creativecommons.org/licenses/by/4.0/
 // Description : Main program of a running journal.
-//============================================================================
+//==============================================================================
 
 // Includes.
 #include <unistd.h>
@@ -34,16 +34,19 @@ int main()
     else if (__cplusplus == 199711L) std::cout << "C++98\n";
     else std::cout << "pre-standard C++\n";
 
+    // Run the services of the program.
     ProgramManager::getInstance().startUp();
 
-    if (ProgramManager::getInstance().getStatus())
+    // Check if the program has started.
+    if (ProgramManager::getInstance().isStarted())
     {
         ProgramManager::getInstance().run();
     }
 
+    // Shut down the services of the program.
     ProgramManager::getInstance().shutDown();
 
-    return 0;
+    return EXIT_SUCCESS;
 }
 
 //==============================================================================

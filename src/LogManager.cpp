@@ -1,12 +1,13 @@
-//============================================================================
+//==============================================================================
 // Name        : LogManager.cpp
 // Author      : Jorge
 // Copyright   : https://creativecommons.org/licenses/by/4.0/
 // Description : Manager of the logfile.
-//============================================================================
+//==============================================================================
 
 #include "LogManager.h"
 
+// System includes.
 #include <chrono>
 #include <iomanip>
 #include <ctime>

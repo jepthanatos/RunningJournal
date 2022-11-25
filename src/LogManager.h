@@ -1,9 +1,9 @@
-//============================================================================
+//==============================================================================
 // Name        : LogManager.h
 // Author      : Jorge
 // Copyright   : https://creativecommons.org/licenses/by/4.0/
 // Description : Manager of the logfile.
-//============================================================================
+//==============================================================================
 
 #ifndef __LOG_MANAGER_H__
 #define __LOG_MANAGER_H__
@@ -66,6 +66,7 @@ namespace runjour
         // Set the log level.
         void setLevel(int value);
 
+        // Get the blank spaces used when printing information.
         const std::string getBlankSpaces() {
             std::string result = "";
             for (int i = 0; i < contBlankSpaces; ++i)
@@ -73,11 +74,13 @@ namespace runjour
             return result;
         }
 
+        // Increase the blank spaces used when printing information.
         const std::string increaseBlankSpaces() {
             contBlankSpaces += 2;
             return getBlankSpaces();
         }
 
+        // Decrease the blank spaces used when printing information.
         const std::string decreaseBlankSpaces() {
             contBlankSpaces -= 2;
             if (contBlankSpaces < 0)
@@ -86,5 +89,5 @@ namespace runjour
         }
     };
 }
-
+//------------------------------------------------------------------------------
 #endif // __LOG_MANAGER_H__

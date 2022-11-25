@@ -1,9 +1,9 @@
-//============================================================================
+//==============================================================================
 // Name        : Activity.cpp
 // Author      : Jorge
 // Copyright   : https://creativecommons.org/licenses/by/4.0/
 // Description : Class to define an Activity.
-//============================================================================
+//==============================================================================
 
 #include "Activity.h"
 #include "LogManager.h"
@@ -104,12 +104,15 @@ namespace runjour
         timeinfo = localtime(&date);
 
         std::string message =
-            std::to_string(timeinfo->tm_yday) + " - " + std::to_string(timeinfo->tm_wday) +
-            " == " + std::to_string(now->tm_yday) + " - " + std::to_string(now->tm_wday);
+            std::to_string(timeinfo->tm_yday) + " - " +
+            std::to_string(timeinfo->tm_wday) + " == " +
+            std::to_string(now->tm_yday) + " - " +
+            std::to_string(now->tm_wday);
 
         LogManager::getInstance().writeLog(E_LEVEL::DEBUG, message);
 
-        return ((timeinfo->tm_yday - timeinfo->tm_wday) == (now->tm_yday - now->tm_wday));
+        return ((timeinfo->tm_yday - timeinfo->tm_wday) ==
+                (now->tm_yday - now->tm_wday));
     }
 
     /*--------------------------------------------------------------------------
