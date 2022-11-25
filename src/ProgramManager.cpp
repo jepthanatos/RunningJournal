@@ -7,6 +7,7 @@
 
 // System includes
 #include <iostream>
+#include <limits>
 #include <unistd.h>
 
 // Local includes
@@ -113,6 +114,7 @@ namespace runjour
                 std::cout << "3- Exit" << std::endl;
                 std::cout << "----------------------------------" << std::endl;
                 std::cin >> option;
+                std::cin.clear();
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
                 switch (option)
@@ -178,6 +180,7 @@ namespace runjour
             generalMenu();
             std::cout << "Option: ";
             std::cin >> option;
+            std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             // std::cout << "\033[2J\033[1;1H";
 
